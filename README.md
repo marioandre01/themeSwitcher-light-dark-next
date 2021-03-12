@@ -21,7 +21,7 @@
 
 ## 💻 Projeto
 
-Este projeto foi desenvolvido para entender e praticar como fazer um **themeSwitcher light/dark** em uma aplicação **React** com **NextJS** usando **styled-components** e **typeScript**. O conhecimento foi adquirido através do vídeo [TTema light/dark com React, Styled Components e TypeScript | Code/Drops #16](https://www.youtube.com/watch?v=ngVU74daJ8Y) do canal da **Rocketseat** no Youtube, orientado pelo instrutor **Diego Fernandes**
+Este projeto foi desenvolvido para entender e praticar como fazer um **themeSwitcher light/dark** em uma aplicação **React** com **NextJS** usando **styled-components** e **typeScript**. O conhecimento foi adquirido através do vídeo [Tema light/dark com React, Styled Components e TypeScript | Code/Drops #16](https://www.youtube.com/watch?v=ngVU74daJ8Y) do canal da **Rocketseat** no Youtube, orientado pelo instrutor **Diego Fernandes**
 
 
 ## 📋 Tecnologias
