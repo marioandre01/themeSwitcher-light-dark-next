@@ -2,27 +2,16 @@ import React, { useContext } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
-import styled from 'styled-components';
 
-export const Container = styled.div`
-    height: 60px;
-    background: ${props => props.theme.colors.primary};
-    /* background: red; */
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-`;
+import { Container } from './styles';
 
 interface Props {
     toggleTheme(): void;
 }
 
-export default function Header({toggleTheme}: Props) {
+const Header: React.FC<Props> = ({ toggleTheme }) => {
     const { colors, title } = useContext(ThemeContext);
-    // console.log('c: '+colors.background);
-    // console.log('ti: '+title);
+    // console.log(title);
 
     return (
         <Container>
@@ -43,4 +32,7 @@ export default function Header({toggleTheme}: Props) {
             />
         </Container>
     );
-  }
+};
+
+export default Header;
+

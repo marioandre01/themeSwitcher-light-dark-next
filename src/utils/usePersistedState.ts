@@ -1,4 +1,5 @@
 import { useEffect, useState, Dispatch, SetStateAction } from 'react';
+import Cookies from 'js-cookie';
 
 type Response<T> = [
     T,
@@ -6,8 +7,9 @@ type Response<T> = [
 ]
 
 function usePersistedState<T>(key: string, initialState: T): Response<T>{
-    const [state, setState] = useState(initialState)
-
+    // console.log(initialState);
+    // const [state, setState] = useState(initialState)
+    // console.log(state);
     // const [state, setState] = useState(teste);
 
     
@@ -15,19 +17,27 @@ function usePersistedState<T>(key: string, initialState: T): Response<T>{
     //     const teste = localStorage.getItem(key);
     // }, []);
 
-    // const [state, setState] = useState(() => {
-    //     const storageValue = localStorage.getItem(key);
+    const [state, setState] = useState(() => {
+        // const storageValue = localStorage.getItem(key);
+        const storageValue = Cookies.get(key);
+        // console.log('key: '+storageValue);
 
-    //     if (storageValue) {
-    //         return JSON.parse(storageValue);
-    //     } else {
-    //         return initialState;
-    //     }
-
-    // });
+        if (storageValue) {
+            // console.log('aqui');
+            // console.log('t: '+JSON.parse(storageValue));
+            return JSON.parse(storageValue);
+            
+        } else {
+            // console.log('aqui-2');
+            return initialState;
+        }
+    });
     
     useEffect(() => {
-        localStorage.setItem(key, JSON.stringify(state));
+        // localStorage.setItem(key, JSON.stringify(state));
+        // Cookies.set(key, String(state));
+        // Cookies.set(key, String(JSON.stringify(state)));
+        Cookies.set(key, JSON.stringify(state));
     }, [key, state]);
 
     return [state, setState];
